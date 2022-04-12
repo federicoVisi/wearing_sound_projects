@@ -1,0 +1,23 @@
+---
+layout: base
+---
+<h2>{{page.title}}</h2>
+<h2>{{site.url}}</h2>
+<h2>{{site.baseurl}}</h2>
+
+<!-- https://jekyllrb.com/docs/static-files/ -->
+<!-- https://jekyllrb.com/docs/structure/ -->
+
+<!-- {if images} -->
+<section class="thumbnail-gallery">
+    {% for file in site.static_files %}
+    {% if file.path contains 'archive' %}
+    {% if file.extname == '.png' or file.extname == '.jpg' %}
+    <div class="thumbnail-gallery__image-container">
+        <img src="{{ site.url }}{{ site.baseurl }}{{ file.path }}" alt="{{ file.path }}" />
+    </div>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+</section>
+<!-- {/if} -->
