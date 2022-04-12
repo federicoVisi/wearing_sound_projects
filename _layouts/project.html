@@ -11,10 +11,8 @@ layout: base
     {% for file in site.static_files %}
     {% if file.path contains 'archive' %}
     {% if file.extname == '.png' or file.extname == '.jpg' %}
-    <!-- Click sets the gallery_open variable to the index of the image, so that Gallery Overlay can initiate at the right slide.
-        Index starting at one, 0-indexed would be falsy. -->
     <div class="thumbnail-gallery__image-container">
-        <img src="{{ site.baseurl }}{{ file.path }}" alt="image" />
+        <img src="{{ site.url }}{{ site.baseurl }}{{ file.path }}" alt="{{ file.path }}" />
     </div>
     {% endif %}
     {% endif %}
