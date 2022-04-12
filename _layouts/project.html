@@ -9,7 +9,6 @@ layout: base
 <!-- https://jekyllrb.com/docs/static-files/ -->
 <!-- https://jekyllrb.com/docs/structure/ -->
 
-<!-- {if images} -->
 <section class="thumbnail-gallery">
     {% for file in site.static_files %}
     {% if file.path contains 'archive' %}
@@ -21,4 +20,3 @@ layout: base
     {% endif %}
     {% endfor %}
 </section>
-<!-- {/if} -->
