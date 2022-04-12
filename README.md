@@ -1,3 +1,3 @@
 # wearing_sound_projects
 
-for local development `bundle exec jekyll serve` / `jekyll serve`
+- For local development `bundle exec jekyll serve` or `jekyll serve`.
