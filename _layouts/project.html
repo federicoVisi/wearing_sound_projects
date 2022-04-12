@@ -3,7 +3,8 @@ layout: base
 ---
 <h2>{{page.title}}</h2>
 <h2>{{site.url}}</h2>
-<h2>{{site.baseurl}}</h2>
+<h2>{{site.mediaurl}}</h2>
+<h2>{{site.foo}}</h2>
 
 <!-- https://jekyllrb.com/docs/static-files/ -->
 <!-- https://jekyllrb.com/docs/structure/ -->
@@ -14,7 +15,7 @@ layout: base
     {% if file.path contains 'archive' %}
     {% if file.extname == '.png' or file.extname == '.jpg' %}
     <div class="thumbnail-gallery__image-container">
-        <img src="{{ site.url }}{{ site.baseurl }}{{ file.path }}" alt="{{ file.path }}" />
+        <img src="{{ site.mediaurl }}{{ file.path }}" alt="{{ file.path }}" />
     </div>
     {% endif %}
     {% endif %}
