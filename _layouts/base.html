@@ -16,8 +16,8 @@ layout: none
         document.documentElement.classList.add('js');
     </script>
 
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/glider.min.css">
 
     <meta name="description" content="Page description">
     <meta property="og:title" content="Unique page title - My Site">
@@ -40,7 +40,7 @@ layout: none
     <div class="root" data-is-touch="false">
         {{ content }}
     </div>
-    <script type="module" src="{{ site.baseurl }}/assets/js/glider.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script type="module" src="{{ site.baseurl }}/assets/js/main.js"></script>
 </body>
 

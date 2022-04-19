@@ -6,7 +6,7 @@ layout: base
 <!-- https://jekyllrb.com/docs/static-files/ -->
 <!-- https://jekyllrb.com/docs/structure/ -->
 
-{% assign index = 0 %}
+{% assign index = 1 %}
 <section class="thumbnail-gallery">
     {% for file in site.static_files %}
     {% if file.path contains 'archive' and file.path contains "thumbnails" %}
@@ -20,6 +20,39 @@ layout: base
     {% endfor %}
 </section>
 
+<div class="slideshow__container">
+    <button aria-label="Close" class="slideshow__close js-slideshow-close-button">X</button>
+
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            {% for file in site.static_files %}
+            {% if file.path contains 'archive' and !file.path contains "thumbnails" %}
+            {% if file.extname == '.png' or file.extname == '.jpg' %}
+            <div class="swiper-slide">
+                <img src="{{ site.mediaurl }}{{ file.path }}" alt="{{ file.path }}" />
+            </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+
+
+</div>
+<!-- 
 <div class="slideshow__container">
     <div class="glider-contain">
         <button aria-label="Close" class="slideshow__close js-slideshow-close-button">X</button>
@@ -38,4 +71,4 @@ layout: base
         <button aria-label="Previous" class="glider-prev">«</button>
         <button aria-label="Next" class="glider-next">»</button>
     </div>
-</div>
+</div> -->
