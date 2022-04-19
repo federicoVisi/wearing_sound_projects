@@ -6,34 +6,36 @@ layout: base
 <!-- https://jekyllrb.com/docs/static-files/ -->
 <!-- https://jekyllrb.com/docs/structure/ -->
 
-<!-- 
+{% assign index = 0 %}
 <section class="thumbnail-gallery">
     {% for file in site.static_files %}
-    {% if file.path contains 'archive' %}
+    {% if file.path contains 'archive' and file.path contains "thumbnails" %}
     {% if file.extname == '.png' or file.extname == '.jpg' %}
-    <div class="thumbnail-gallery__image-container">
+    <div class="thumbnail-gallery__image-container js-glider-thumbnail" data-index="{{index}}">
         <img src="{{ site.mediaurl }}{{ file.path }}" alt="{{ file.path }}" />
     </div>
+    {% assign index = index | plus: 1 %}
     {% endif %}
     {% endif %}
     {% endfor %}
-</section> -->
+</section>
 
-
-<div class="glider-contain">
-    <div class="glider js-glider">
-        {% for file in site.static_files %}
-        {% if file.path contains 'archive' and file.path contains "thumbnails" %}
-        {% if file.extname == '.png' or file.extname == '.jpg' %}
-        <div class="swiper-slide">
-            <img src="{{ site.mediaurl }}{{ file.path }}" alt="{{ file.path }}" />
+<div class="slideshow__container">
+    <div class="glider-contain">
+        <button aria-label="Close" class="slideshow__close js-slideshow-close-button">X</button>
+        <div class="glider js-glider">
+            {% for file in site.static_files %}
+            {% if file.path contains 'archive' and !file.path contains "thumbnails" %}
+            {% if file.extname == '.png' or file.extname == '.jpg' %}
+            <div class="swiper-slide">
+                <img src="{{ site.mediaurl }}{{ file.path }}" alt="{{ file.path }}" />
+            </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
         </div>
-        {% endif %}
-        {% endif %}
-        {% endfor %}
-    </div>
 
-    <button aria-label="Previous" class="glider-prev">«</button>
-    <button aria-label="Next" class="glider-next">»</button>
-    <div role="tablist" class="dots"></div>
+        <button aria-label="Previous" class="glider-prev">«</button>
+        <button aria-label="Next" class="glider-next">»</button>
+    </div>
 </div>

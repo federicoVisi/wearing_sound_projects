@@ -1,13 +1,15 @@
-// import Swiper, {
-//   SwiperPluginLazyload,
-//   SwiperPluginPagination,
-// } from "tiny-swiper";
+let glider;
 
 window.addEventListener("load", () => {
   console.log("main.js");
-  new Glider(document.querySelector(".js-glider"), {
+  initGlider();
+  initThumbnailEventListeners();
+});
+
+function initGlider() {
+  glider = new Glider(document.querySelector(".js-glider"), {
     slidesToScroll: 1,
-    slidesToShow: 5.5,
+    slidesToShow: 1,
     draggable: true,
     dots: ".dots",
     arrows: {
@@ -15,4 +17,20 @@ window.addEventListener("load", () => {
       next: ".glider-next",
     },
   });
-});
+  document
+    .querySelector(".js-slideshow-close-button")
+    .addEventListener("click", () => {
+      document.body.classList.remove("slideshow-open");
+    });
+}
+
+function initThumbnailEventListeners() {
+  const thumbnails = document.querySelectorAll(".js-glider-thumbnail");
+  thumbnails.forEach((thumbnail) =>
+    thumbnail.addEventListener("click", (ev) => {
+      document.body.classList.add("slideshow-open");
+      console.log(ev.target.parentElement.dataset.index);
+      glider.scrollItem(ev.target.parentElement.dataset.index, true);
+    })
+  );
+}

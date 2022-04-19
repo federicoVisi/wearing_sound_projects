@@ -1,0 +1,21 @@
+.slideshow__container {
+  visibility: hidden;
+  height: 80%;
+  top: 20%;
+  position: fixed;
+  left: 0;
+  background: white;
+  right: 0;
+}
+
+body.slideshow-open .slideshow__container {
+  visibility: visible;
+}
+
+.slideshow__container .glider-prev {
+  left: 0;
+}
+
+.slideshow__container .glider-next {
+  right: 0;
+}
