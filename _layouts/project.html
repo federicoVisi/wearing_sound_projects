@@ -23,7 +23,7 @@ layout: base
 <div class="glider-contain">
     <div class="glider js-glider">
         {% for file in site.static_files %}
-        {% if file.path contains 'archive' %}
+        {% if file.path contains 'archive' and file.path contains "thumbnails" %}
         {% if file.extname == '.png' or file.extname == '.jpg' %}
         <div class="swiper-slide">
             <img src="{{ site.mediaurl }}{{ file.path }}" alt="{{ file.path }}" />
