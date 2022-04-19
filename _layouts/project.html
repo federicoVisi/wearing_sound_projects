@@ -6,6 +6,7 @@ layout: base
 <!-- https://jekyllrb.com/docs/static-files/ -->
 <!-- https://jekyllrb.com/docs/structure/ -->
 
+<!-- 
 <section class="thumbnail-gallery">
     {% for file in site.static_files %}
     {% if file.path contains 'archive' %}
@@ -16,4 +17,23 @@ layout: base
     {% endif %}
     {% endif %}
     {% endfor %}
-</section>
+</section> -->
+
+
+<div class="glider-contain">
+    <div class="glider js-glider">
+        {% for file in site.static_files %}
+        {% if file.path contains 'archive' %}
+        {% if file.extname == '.png' or file.extname == '.jpg' %}
+        <div class="swiper-slide">
+            <img src="{{ site.mediaurl }}{{ file.path }}" alt="{{ file.path }}" />
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <button aria-label="Previous" class="glider-prev">«</button>
+    <button aria-label="Next" class="glider-next">»</button>
+    <div role="tablist" class="dots"></div>
+</div>
