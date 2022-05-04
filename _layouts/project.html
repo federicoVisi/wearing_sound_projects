@@ -11,7 +11,7 @@ layout: base
     {% for file in site.static_files %}
     {% if file.path contains 'archive' and file.path contains "thumbnails" %}
     {% if file.extname == '.png' or file.extname == '.jpg' %}
-    <div class="thumbnail-gallery__image-container js-glider-thumbnail" data-index="{{index}}">
+    <div class="thumbnail-gallery__image-container js-slideshow-thumbnail" data-index="{{index}}">
         <img src="{{ site.mediaurl }}{{ file.path }}" alt="{{ file.path }}" />
     </div>
     {% assign index = index | plus: 1 %}
@@ -29,12 +29,14 @@ layout: base
         <div class="swiper-wrapper">
             <!-- Slides -->
             {% for file in site.static_files %}
-            {% if file.path contains 'archive' and !file.path contains "thumbnails" %}
+            {% if file.path contains 'archive' %}
+            {% unless file.path contains "thumbnails" %}
             {% if file.extname == '.png' or file.extname == '.jpg' %}
-            <div class="swiper-slide">
-                <img src="{{ site.mediaurl }}{{ file.path }}" alt="{{ file.path }}" />
+            <div class="swiper-slide slideshow__slide">
+                <img src="{{ site.mediaurl }}{{ file.path }}" alt="{{ file.path }}" loading="lazy" />
             </div>
             {% endif %}
+            {% endunless %}
             {% endif %}
             {% endfor %}
         </div>
@@ -52,23 +54,3 @@ layout: base
 
 
 </div>
-<!-- 
-<div class="slideshow__container">
-    <div class="glider-contain">
-        <button aria-label="Close" class="slideshow__close js-slideshow-close-button">X</button>
-        <div class="glider js-glider">
-            {% for file in site.static_files %}
-            {% if file.path contains 'archive' and !file.path contains "thumbnails" %}
-            {% if file.extname == '.png' or file.extname == '.jpg' %}
-            <div class="swiper-slide">
-                <img src="{{ site.mediaurl }}{{ file.path }}" alt="{{ file.path }}" />
-            </div>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-        </div>
-
-        <button aria-label="Previous" class="glider-prev">«</button>
-        <button aria-label="Next" class="glider-next">»</button>
-    </div>
-</div> -->

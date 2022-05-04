@@ -1,13 +1,12 @@
 .slideshow {
   &__container {
     visibility: hidden;
-    height: 80%;
-    top: 20%;
+    height: 100%;
+    top: 0;
     position: fixed;
     left: 0;
-    background: white;
     right: 0;
-    position: relative;
+    background: white;
   }
 
   body.slideshow-open &__container {
@@ -16,10 +15,24 @@
 
   &__close {
     position: absolute;
-    right: 0;
-    top: 0;
-    padding: var(--body-padding);
-    background: none;
+    right: var(--body-padding);
+    top: var(--body-padding);
+    z-index: 2;
+    background-color: red;
+  }
+
+  &__slide {
+    height: 100%;
+    width: auto;
+    position: relative;
+
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
 }
 
