@@ -18,6 +18,12 @@ function initSwiper() {
       prevEl: ".swiper-button-prev",
     },
     centeredSlides: true,
+    // Disable preloading of all images
+    preloadImages: false,
+    // Enable lazy loading
+    lazy: {
+      loadPrevNext: true,
+    },
   });
 
   document

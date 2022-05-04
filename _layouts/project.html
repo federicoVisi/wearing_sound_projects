@@ -6,6 +6,10 @@ layout: base
 <!-- https://jekyllrb.com/docs/static-files/ -->
 <!-- https://jekyllrb.com/docs/structure/ -->
 
+<div class="project__description">
+    {{ content }}
+</div>
+
 {% assign index = 1 %}
 <section class="thumbnail-gallery">
     {% for file in site.static_files %}
@@ -33,7 +37,8 @@ layout: base
             {% unless file.path contains "thumbnails" %}
             {% if file.extname == '.png' or file.extname == '.jpg' %}
             <div class="swiper-slide slideshow__slide">
-                <img src="{{ site.mediaurl }}{{ file.path }}" alt="{{ file.path }}" loading="lazy" />
+                <img data-src="{{ site.mediaurl }}{{ file.path }}" alt="{{ file.path }}" class="swiper-lazy" />
+                <div class="swiper-lazy-preloader"></div>
             </div>
             {% endif %}
             {% endunless %}
