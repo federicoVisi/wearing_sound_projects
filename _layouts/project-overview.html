@@ -1,0 +1,12 @@
+---
+# base from https://www.matuzo.at/blog/html-boilerplate/
+layout: base
+---
+
+<ul>
+    {% for post in site.posts %}
+    <li>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ul>

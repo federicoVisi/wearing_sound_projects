@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Landing on Body!"
+title: "Landing on Body"
 ---
 
 # Landing on Body
