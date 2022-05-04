@@ -1,26 +1,21 @@
 .thumbnail-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
   margin-bottom: 1rem;
 
-  &::after {
-    content: "";
-    flex-grow: 999999999;
+  @media (min-width: 768px) {
+    & {
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
 
   .thumbnail-gallery__image-container {
     background-color: gray;
     position: relative;
     cursor: pointer;
-    height: auto;
-    width: 33%;
-    padding-bottom: 33%;
-
-    @media (min-width: 768px) {
-      width: 16.5%;
-      padding-bottom: 16.5%;
-    }
+    height: 0;
+    padding-top: 100%;
   }
 
   img {

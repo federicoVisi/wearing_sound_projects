@@ -1,15 +1,26 @@
-.slideshow__container {
-  visibility: hidden;
-  height: 80%;
-  top: 20%;
-  position: fixed;
-  left: 0;
-  background: white;
-  right: 0;
-}
+.slideshow {
+  &__container {
+    visibility: hidden;
+    height: 80%;
+    top: 20%;
+    position: fixed;
+    left: 0;
+    background: white;
+    right: 0;
+    position: relative;
+  }
 
-body.slideshow-open .slideshow__container {
-  visibility: visible;
+  body.slideshow-open &__container {
+    visibility: visible;
+  }
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: var(--body-padding);
+    background: none;
+  }
 }
 
 // .slideshow__container .glider-prev {

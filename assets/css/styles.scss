@@ -1,6 +1,10 @@
 ---
 ---
 
-@import "_root";
-@import "_thumbnail-gallery";
-@import "_slideshow";
+ {
+  @import "_root";
+  @import "_body";
+  @import "_thumbnail-gallery";
+  @import "_swiper";
+  @import "_slideshow";
+}
