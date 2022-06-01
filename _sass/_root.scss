@@ -4,6 +4,9 @@
   margin-right: auto;
   --body-padding: 10px;
   --background-color: white;
+  --color: rgb(30, 0, 151);
+  --font-weight-light: 300;
+  --font-weight-bold: 600;
 
   @media (min-width: 750px) {
     --body-padding: 30px;

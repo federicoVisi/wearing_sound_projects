@@ -1,0 +1,23 @@
+.project {
+  &__title {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 0.5rem;
+
+    @media (min-width: 750px) {
+      font-size: 4rem;
+    }
+  }
+
+  &__group {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: var(--font-weight-light);
+    margin-top: 0;
+    margin-bottom: 5rem;
+  }
+
+  &__description {
+    margin-bottom: 5rem;
+  }
+}
