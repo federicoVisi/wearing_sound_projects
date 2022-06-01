@@ -3,10 +3,16 @@
 layout: base
 ---
 
-<ul>
-    {% for post in site.posts %}
-    <li>
-        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-    </li>
-    {% endfor %}
-</ul>
+<h1 class="archive__title">Wearing Sound Projects</h1>
+<h4 class="archive__subtitle">Product & Fashion Design | UdK Berlin</h4>
+
+<div class="archive__term-container">
+    <h3 class="archive__term-title">2021/2022</h3>
+    <ul>
+        {% for post in site.posts %}
+        <li>
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
