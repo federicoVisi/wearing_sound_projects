@@ -1,11 +1,8 @@
 ---
 layout: project
 title: "Landing on Body"
+group: "Julika & Tin"
 ---
-
-# Landing on Body
-
-Julika & Tin
 
 Our project is about a speculative future body. We were thinking about how to connect the body, technology and different materials for a storytelling costume/performance.
 
