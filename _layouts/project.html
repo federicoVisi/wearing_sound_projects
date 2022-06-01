@@ -1,7 +1,9 @@
 ---
 layout: base
 ---
-<h2>Project Title</h2>
+{% include breadcrumbs.html %}
+<h2 class="project__title">{{ page.title }}</h2>
+<h4 class="project__group">{{ page.group }}</h4>
 
 <!-- https://jekyllrb.com/docs/static-files/ -->
 <!-- https://jekyllrb.com/docs/structure/ -->
